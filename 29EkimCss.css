@@ -1,0 +1,202 @@
+/* ===== Renk Paleti (gazete görseliyle uyumlu) =====
+   Bayrak kırmızısı : #c8102e / #e30a17
+   Koyu espresso    : #231a14 (arka plan, nav)
+   Krem (gazete)    : #f4e6c8 (içerik kutusu)
+   Altın vurgu      : #e8c36a
+   Koyu metin       : #3a2e22
+*/
+:root {
+    --kirmizi: #c8102e;
+    --kirmizi-koyu: #8f0b21;
+    --espresso: #231a14;
+    --krem: #f4e6c8;
+    --altin: #e8c36a;
+    --metin: #3a2e22;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: radial-gradient(circle at top, #3a2b20 0%, var(--espresso) 70%);
+    background-attachment: fixed;
+    padding: 0 15px 30px;
+}
+
+/* Header */
+.site-header {
+    background: linear-gradient(135deg, var(--kirmizi) 0%, var(--kirmizi-koyu) 100%);
+    color: #fff;
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 30px;
+    border-radius: 8px;
+    border-bottom: 4px solid var(--altin);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    text-align: center;
+}
+
+.site-header h1 {
+    font-size: 22px;
+    line-height: 1.4;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.site-header .imza {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--altin);
+    margin-top: 10px;
+}
+
+.site-header .kutlama {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(232, 195, 106, 0.5);
+}
+
+/* Nav */
+.site-nav {
+    background-color: var(--espresso);
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--altin);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.site-nav a {
+    color: var(--krem);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.site-nav a:hover {
+    color: var(--altin);
+}
+
+/* Section */
+.icerik-kutusu {
+    background-color: var(--krem);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 4px solid var(--kirmizi);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.sol-gorsel {
+    width: 40%;
+    float: left;
+}
+
+.sol-gorsel img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.sag-yazi {
+    width: 55%;
+    float: left;
+    margin-left: 5%;
+}
+
+.sag-yazi h2 {
+    color: var(--kirmizi);
+    font-size: 22px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--altin);
+}
+
+.sag-yazi p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--metin);
+}
+
+/* Video Alanı */
+.video-alani {
+    width: 100%;
+    clear: both;
+    margin-top: 30px;
+    border-top: 1px solid rgba(58, 46, 34, 0.25);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.video-alani h3 {
+    color: var(--kirmizi);
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.video-kutu {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-kutu iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--kirmizi) 0%, var(--kirmizi-koyu) 100%);
+    color: #fff;
+    max-width: 800px;
+    margin: 30px auto 0;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 4px solid var(--altin);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.footer .footer-alt {
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--altin);
+    margin-top: 8px;
+}
+
+/* Küçük ekranlar */
+@media (max-width: 600px) {
+    .sol-gorsel,
+    .sag-yazi {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+    }
+
+    .sag-yazi {
+        margin-top: 15px;
+    }
+}
